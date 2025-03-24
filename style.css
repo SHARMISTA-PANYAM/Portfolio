@@ -552,7 +552,7 @@ header.scrolled {
 
 .contact-text {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     color: var(--text-color);
     opacity: 0.8;
     max-width: 600px;
@@ -560,82 +560,119 @@ header.scrolled {
     margin-right: auto;
 }
 
-.contact-form {
-    max-width: 600px;
+.contact-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 500px;
     margin: 0 auto;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
+.contact-info-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icon {
+    background: rgba(255, 71, 87, 0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+}
+
+.contact-icon i {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+.contact-details {
+    flex: 1;
+    position: relative;
+}
+
+.contact-details h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+.contact-details p, .contact-details a {
+    margin: 0;
     color: var(--text-color);
-    font-size: 16px;
-    transition: var(--transition);
+    font-size: 1rem;
+    word-break: break-all;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.form-group textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-.submit-container {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.submit-button {
-    background: var(--accent-color);
-    color: white;
+.contact-details .copy-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
     border: none;
-    padding: 12px 40px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1rem;
     cursor: pointer;
-    transition: var(--transition);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
 }
 
-.submit-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+.contact-details .copy-btn:hover {
+    color: var(--accent-color);
 }
 
-.form-feedback {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.form-feedback.success {
-    background: rgba(39, 174, 96, 0.2);
+.contact-details .copy-btn.copied {
     color: #2ecc71;
-    border: 1px solid #27ae60;
 }
 
-.form-feedback.error {
-    background: rgba(231, 76, 60, 0.2);
-    color: #e74c3c;
-    border: 1px solid #c0392b;
+.linkedin-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.linkedin-link:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Remove form styles that are no longer needed */
+.form-group,
+.contact-form,
+.form-feedback {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .contact-info-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-details .copy-btn {
+        position: static;
+        margin-top: 0.5rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 /* Add smooth scroll behavior */

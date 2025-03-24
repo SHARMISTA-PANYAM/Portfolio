@@ -221,22 +221,45 @@
             <div class="underline"></div>
         </div>
         <div class="contact-content">
-            <p class="contact-text">Have a question or want to work together? Leave your details and I'll get back to you as soon as possible.</p>
-            <form id="contactForm" class="contact-form" action="/contact" method="POST">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Name" required>
+            <p class="contact-text">Interested in working together? Feel free to reach out to me through any of the following channels:</p>
+            
+            <div class="contact-info-container">
+                <div class="contact-info-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <p id="phone-number">+1 (513) 413-8935</p>
+                        <button class="copy-btn" data-copy="phone-number">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Email" required>
+
+                <div class="contact-info-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p id="email-address">sharmistapanyam201@gmail.com</p>
+                        <button class="copy-btn" data-copy="email-address">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <textarea name="message" placeholder="Message" required></textarea>
+
+                <div class="contact-info-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>LinkedIn</h3>
+                        <a href="https://linkedin.com/in/sharmista-panyam" target="_blank" class="linkedin-link">linkedin.com/in/sharmista-panyam</a>
+                    </div>
                 </div>
-                <div class="submit-container">
-                    <button type="submit" class="submit-button">SUBMIT</button>
-                </div>
-            </form>
-            <div id="formFeedback" class="form-feedback"></div>
+            </div>
         </div>
     </section>
 
@@ -247,14 +270,6 @@
     <footer class="fixed-footer">
         <div class="footer-content">
             <p>Sharmista Panyam ©2025</p>
-            <div class="social-icons">
-                <a href="https://github.com/SHARMISTA-PANYAM" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:sharmistapanyam201@gmail.com">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
         </div>
     </footer>
 

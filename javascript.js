@@ -167,4 +167,40 @@ document.addEventListener('DOMContentLoaded', () => {
             formFeedback.classList.add(type);
         }
     }
+
+    // Add copy functionality for contact information
+    const copyButtons = document.querySelectorAll('.copy-btn');
+    
+    copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Get the ID of the element to copy from data attribute
+            const targetId = button.getAttribute('data-copy');
+            const textToCopy = document.getElementById(targetId).textContent;
+            
+            // Create a temporary textarea element to copy from
+            const textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'absolute';
+            textarea.style.left = '-9999px';
+            document.body.appendChild(textarea);
+            
+            // Select and copy the text
+            textarea.select();
+            document.execCommand('copy');
+            
+            // Remove the temporary element
+            document.body.removeChild(textarea);
+            
+            // Visual feedback that the text was copied
+            button.innerHTML = '<i class="fas fa-check"></i>';
+            button.classList.add('copied');
+            
+            // Reset after 2 seconds
+            setTimeout(() => {
+                button.innerHTML = '<i class="fas fa-copy"></i>';
+                button.classList.remove('copied');
+            }, 2000);
+        });
+    });
 });

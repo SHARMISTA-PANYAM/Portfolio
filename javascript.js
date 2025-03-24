@@ -93,4 +93,110 @@ document.addEventListener('DOMContentLoaded', () => {
     projects.forEach(project => {
         observer.observe(project);
     });
+
+    // Modal functionality for contact information
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modals = {
+        phone: document.getElementById('phoneModal'),
+        email: document.getElementById('emailModal')
+    };
+    
+    // Open modal when clicking on contact items
+    const contactItems = document.querySelectorAll('.contact-info-item[data-modal]');
+    contactItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const modalType = item.getAttribute('data-modal');
+            openModal(modalType);
+        });
+    });
+    
+    // Close modal when clicking on close button
+    const closeButtons = document.querySelectorAll('.modal-close');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', closeModal);
+    });
+    
+    // Close modal when clicking outside modal
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            closeModal();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+    
+    // Open modal function
+    function openModal(type) {
+        modalOverlay.classList.add('active');
+        
+        // Hide all modals first
+        Object.values(modals).forEach(modal => {
+            modal.classList.remove('active');
+        });
+        
+        // Show the selected modal
+        if (modals[type]) {
+            modals[type].classList.add('active');
+        }
+    }
+    
+    // Close modal function
+    function closeModal() {
+        modalOverlay.classList.remove('active');
+        
+        // Hide all modals
+        Object.values(modals).forEach(modal => {
+            modal.classList.remove('active');
+        });
+    }
+
+    // Add copy functionality for contact information
+    const copyButtons = document.querySelectorAll('.copy-btn');
+    
+    copyButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            // Prevent triggering the modal
+            e.stopPropagation();
+            
+            // Get the ID of the element to copy from data attribute
+            const targetId = button.getAttribute('data-copy');
+            const textToCopy = document.getElementById(targetId).textContent;
+            
+            // Create a temporary textarea element to copy from
+            const textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'absolute';
+            textarea.style.left = '-9999px';
+            document.body.appendChild(textarea);
+            
+            // Select and copy the text
+            textarea.select();
+            document.execCommand('copy');
+            
+            // Remove the temporary element
+            document.body.removeChild(textarea);
+            
+            // Visual feedback that the text was copied
+            const originalButtonText = button.innerHTML;
+            const buttonSpan = button.querySelector('span');
+            if (buttonSpan) {
+                buttonSpan.textContent = 'Copied!';
+            }
+            button.classList.add('copied');
+            
+            // Reset after 2 seconds
+            setTimeout(() => {
+                if (buttonSpan) {
+                    buttonSpan.textContent = 'Copy';
+                }
+                button.classList.remove('copied');
+            }, 2000);
+        });
+    });
 });

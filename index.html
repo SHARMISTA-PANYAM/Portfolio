@@ -221,23 +221,79 @@
             <div class="underline"></div>
         </div>
         <div class="contact-content">
-            <p class="contact-text">Have a question or want to work together? Leave your details and I'll get back to you as soon as possible.</p>
-            <form class="contact-form" action="/contact" method="POST">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Name" required>
+            <p class="contact-text">Interested in working together? Feel free to reach out to me through any of the following channels:</p>
+            
+            <div class="contact-info-container">
+                <div class="contact-info-row">
+                    <div class="contact-info-item" data-modal="phone">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item" data-modal="email">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item" onclick="window.open('https://linkedin.com/in/sharmista-panyam', '_blank')">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea name="message" placeholder="Message" required></textarea>
-                </div>
-                <div class="submit-container">
-                    <button type="submit" class="submit-button">SUBMIT</button>
-                </div>
-            </form>
+            </div>
         </div>
     </section>
+
+    <!-- Modal Popups for Contact Information -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="phoneModal">
+            <div class="modal-header">
+                <h3>My Phone Number</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-content">
+                <p id="phone-number">+1 (513) 413-8935</p>
+                <button class="copy-btn" data-copy="phone-number">
+                    <div class="copy-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                            <path d="M20,2H10C8.9,2,8,2.9,8,4v4H4c-1.1,0-2,0.9-2,2v10c0,1.1,0.9,2,2,2h10c1.1,0,2-0.9,2-2v-4h4c1.1,0,2-0.9,2-2V4 C22,2.9,21.1,2,20,2z M14,18H4V10h10V18z M20,14h-4v-4c0-1.1-0.9-2-2-2h-4V4h10V14z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span>Copy</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="modal" id="emailModal">
+            <div class="modal-header">
+                <h3>My Email Address</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-content">
+                <p id="email-address">sharmistapanyam201@gmail.com</p>
+                <button class="copy-btn" data-copy="email-address">
+                    <div class="copy-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                            <path d="M20,2H10C8.9,2,8,2.9,8,4v4H4c-1.1,0-2,0.9-2,2v10c0,1.1,0.9,2,2,2h10c1.1,0,2-0.9,2-2v-4h4c1.1,0,2-0.9,2-2V4 C22,2.9,21.1,2,20,2z M14,18H4V10h10V18z M20,14h-4v-4c0-1.1-0.9-2-2-2h-4V4h10V14z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span>Copy</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Scroll Up Button -->
     <a href="#home" class="scroll-up-btn">↑</a>
@@ -246,14 +302,6 @@
     <footer class="fixed-footer">
         <div class="footer-content">
             <p>Sharmista Panyam ©2025</p>
-            <div class="social-icons">
-                <a href="https://github.com/SHARMISTA-PANYAM" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:sharmistapanyam201@gmail.com">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
         </div>
     </footer>
 

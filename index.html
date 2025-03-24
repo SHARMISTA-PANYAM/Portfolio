@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharmista Panyam - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <a href="#home" class="menu-btn active">Home</a>
+            <a href="#about" class="menu-btn">About Me</a>
+            <a href="#projects" class="menu-btn">Projects</a>
+            <a href="#experience" class="menu-btn">Experience</a>
+            <a href="#contact" class="menu-btn">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="network-bg">
+            <canvas id="network-canvas"></canvas>
+        </div>
+        <div class="hero-content">
+            <h1>Hello, I'm <span>Sharmista</span>.</h1>
+            <p class="subtitle">I'm an AI/ML Engineer.</p>
+            <a href="#projects" class="view-work-btn">View my work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-header">
+        <h2>About Me</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="about-content">
+            <div class="profile-image">
+                <!-- Profile illustration SVG -->
+                <svg viewBox="25 0 200 200" xmlns="http://www.w3.org/2000/svg" class="profile-svg">
+                    <path fill="url(#gradient)" d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"/>
+                    <defs>
+                        <linearGradient id="gradient" gradientTransform="rotate(45)">
+                            <stop offset="0%" stop-color="#4e85f6" />
+                            <stop offset="100%" stop-color="#ff4757" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="about-text">
+                <p class="bio">
+                    Fully committed to the philosophy of life-long learning, I'm a full stack developer with a deep passion for JavaScript, React, and all things web development. The unique combination of creativity, logic, technology, and never running out of new things to discover drives my excitement and passion for web development. When I'm not at my computer, I like to spend my time reading, keeping fit, and playing guitar.
+                </p>
+                <div class="skills-container">
+                    <div class="skill-card">
+                        <img src="assets/logos/python.svg" alt="Python" class="skill-logo">
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/logos/tensorflow.svg" alt="TensorFlow" class="skill-logo">
+                        <span>TensorFlow</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/logos/pytorch.svg" alt="Sass" class="skill-logo">
+                        <span>PyTorch</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/logos/scikit.svg" alt="Sass" class="skill-logo">
+                        <span>Scikit-learn</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/logos/mongodb.svg" alt="MongoDB" class="skill-logo">
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/logos/mysql.svg" alt="MySQL" class="skill-logo">
+                        <span>MySQL</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/logos/tableau.svg" alt="Tableau" class="skill-logo">
+                        <span>Tableau</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/logos/git.svg" alt="Git" class="skill-logo">
+                        <span>Git</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/logos/aws.svg" alt="AWS" class="skill-logo">
+                        <span>AWS</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="assets/logos/gcp.svg" alt="Google Cloud" class="skill-logo">
+                        <span>Google Cloud</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="section-header">
+            <h2>Projects</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="projects-grid">
+            <article class="project-item">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/800x500/151515/ff4757" alt="Lifeinvader Social Media App">
+                </div>
+                <div class="project-content">
+                    <h3>Lifeinvader</h3>
+                    <h4>Social Media App</h4>
+                    <p>Full stack social media application built with React, Node.js, Express.js, MongoDB, Socket.io and AWS S3.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                </div>
+            </article>
+
+            <article class="project-item">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/800x500/151515/ff4757" alt="COVID-19 Tracker">
+                </div>
+                <div class="project-content">
+                    <h3>COVID-19 Tracker</h3>
+                    <h4>Data Visualization</h4>
+                    <p>Real-time Power BI dashboard tracking COVID-19 cases and vaccination progress worldwide.</p>
+                    <div class="project-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Healthcare</span>
+                        <span class="tag">Data Viz</span>
+                </div>
+            </article>
+
+            <article class="project-item">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/800x500/151515/ff4757" alt="CHF Mortality Prediction">
+                </div>
+                <div class="project-content">
+                    <h3>CHF Mortality Prediction</h3>
+                    <h4>Machine Learning</h4>
+                    <p>Machine learning model predicting mortality rates in CHF and CAD patients.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">ML</span>
+                        <span class="tag">Healthcare</span>
+                    </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="section-header">
+            <h2>Work Experience</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="experience-container">
+            <div class="timeline-line"></div>
+            
+            <div class="experience-tile left">
+                <div class="timeline-marker">
+                    <div class="timeline-number">1</div>
+                </div>
+                <div class="experience-content">
+                    <h3>Data Engineer</h3>
+                    <h4>Macy's</h4>
+                    <span class="timeline-date">2023 - Present</span>
+                    <p>Building and maintaining data pipelines, implementing ETL processes, and developing analytics solutions.</p>
+                </div>
+            </div>
+            
+            <div class="experience-tile right">
+                <div class="timeline-marker">
+                    <div class="timeline-number">2</div>
+                </div>
+                <div class="experience-content">
+                    <h3>AI Intern</h3>
+                    <h4>D3V Technologies</h4>
+                    <span class="timeline-date">2022 - 2023</span>
+                    <p>Developed machine learning models and implemented AI solutions for client projects.</p>
+                </div>
+            </div>
+            
+            <div class="experience-tile left">
+                <div class="timeline-marker">
+                    <div class="timeline-number">3</div>
+                </div>
+                <div class="experience-content">
+                    <h3>Business Analyst</h3>
+                    <h4>Doublene</h4>
+                    <span class="timeline-date">2021 - 2022</span>
+                    <p>Analyzed business requirements and translated them into technical specifications.</p>
+                </div>
+            </div>
+            
+            <div class="experience-tile right">
+                <div class="timeline-marker">
+                    <div class="timeline-number">4</div>
+                </div>
+                <div class="experience-content">
+                    <h3>Full Stack Developer</h3>
+                    <h4>Techecy</h4>
+                    <span class="timeline-date">2020 - 2021</span>
+                    <p>Worked on developing web applications using modern frameworks and technologies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2>Contact</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="contact-content">
+            <p class="contact-text">Have a question or want to work together? Leave your details and I'll get back to you as soon as possible.</p>
+            <form class="contact-form" action="/contact" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Message" required></textarea>
+                </div>
+                <div class="submit-container">
+                    <button type="submit" class="submit-button">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Scroll Up Button -->
+    <a href="#home" class="scroll-up-btn">↑</a>
+
+    <!-- Fixed Footer -->
+    <footer class="fixed-footer">
+        <div class="footer-content">
+            <p>Sharmista Panyam ©2025</p>
+            <div class="social-icons">
+                <a href="https://github.com/SHARMISTA-PANYAM" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:sharmistapanyam201@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Network background animation
+        function initNetworkBackground() {
+            const canvas = document.getElementById('network-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            const particleCount = 100;
+            const connectionDistance = 150;
+            const mouseRadius = 150;
+            let mouse = { x: null, y: null };
+
+            // Set canvas size
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            // Particle class
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.5;
+                    this.vy = (Math.random() - 0.5) * 0.5;
+                    this.radius = 2;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(66, 133, 244, 0.6)';
+                    ctx.fill();
+                }
+
+                update() {
+                    if (this.x > canvas.width || this.x < 0) this.vx = -this.vx;
+                    if (this.y > canvas.height || this.y < 0) this.vy = -this.vy;
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    // Mouse interaction
+                    if (mouse.x && mouse.y) {
+                        const dx = mouse.x - this.x;
+                        const dy = mouse.y - this.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < mouseRadius) {
+                            const angle = Math.atan2(dy, dx);
+                            this.x -= Math.cos(angle) * 1;
+                            this.y -= Math.sin(angle) * 1;
+                        }
+                    }
+                }
+            }
+
+            // Create particles
+            function init() {
+                particles = [];
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            // Animation loop
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+
+                    // Draw connections
+                    particles.forEach(otherParticle => {
+                        const dx = particle.x - otherParticle.x;
+                        const dy = particle.y - otherParticle.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < connectionDistance) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(66, 133, 244, ${1 - distance/connectionDistance})`;
+                            ctx.lineWidth = 1;
+                            ctx.moveTo(particle.x, particle.y);
+                            ctx.lineTo(otherParticle.x, otherParticle.y);
+                            ctx.stroke();
+                        }
+                    });
+                });
+
+                requestAnimationFrame(animate);
+            }
+
+            // Mouse movement
+            canvas.addEventListener('mousemove', (e) => {
+                mouse.x = e.x;
+                mouse.y = e.y;
+            });
+
+            canvas.addEventListener('mouseleave', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            // Initialize and start animation
+            init();
+            animate();
+        }
+
+        // Header scroll effect
+        function handleScroll() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Active menu item
+        const sections = document.querySelectorAll('section');
+        const menuItems = document.querySelectorAll('.menu-btn');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            menuItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            initNetworkBackground();
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
+</body>
+</html>

@@ -94,85 +94,75 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(project);
     });
 
-    // Contact Form Handling
-    const contactForm = document.getElementById('contactForm');
-    const formFeedback = document.getElementById('formFeedback');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Clear previous feedback
-            formFeedback.textContent = '';
-            formFeedback.className = 'form-feedback';
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            const formDataObj = {};
-            formData.forEach((value, key) => {
-                formDataObj[key] = value;
-            });
-            
-            // Simple validation
-            if (!formDataObj.name || !formDataObj.email || !formDataObj.message) {
-                showFeedback('Please fill in all fields.', 'error');
-                return;
-            }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(formDataObj.email)) {
-                showFeedback('Please enter a valid email address.', 'error');
-                return;
-            }
-            
-            try {
-                // Show loading message
-                showFeedback('Sending message...', '');
-                
-                // Send form data to server
-                const response = await fetch('/contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formDataObj)
-                });
-                
-                // Parse the JSON response
-                const data = await response.json();
-                
-                // Handle response
-                if (response.ok) {
-                    showFeedback(data.message || 'Thank you for your message! I will get back to you soon.', 'success');
-                    contactForm.reset();
-                } else {
-                    // Use the detailed error message if available
-                    const errorMessage = data.message || 'Something went wrong. Please try again later.';
-                    const detailedError = data.details ? `\n\nDetails: ${data.details}` : '';
-                    showFeedback(errorMessage + detailedError, 'error');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                showFeedback('Network error. Please check your connection and try again.', 'error');
-            }
+    // Modal functionality for contact information
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modals = {
+        phone: document.getElementById('phoneModal'),
+        email: document.getElementById('emailModal')
+    };
+    
+    // Open modal when clicking on contact items
+    const contactItems = document.querySelectorAll('.contact-info-item[data-modal]');
+    contactItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const modalType = item.getAttribute('data-modal');
+            openModal(modalType);
         });
+    });
+    
+    // Close modal when clicking on close button
+    const closeButtons = document.querySelectorAll('.modal-close');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', closeModal);
+    });
+    
+    // Close modal when clicking outside modal
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            closeModal();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+    
+    // Open modal function
+    function openModal(type) {
+        modalOverlay.classList.add('active');
+        
+        // Hide all modals first
+        Object.values(modals).forEach(modal => {
+            modal.classList.remove('active');
+        });
+        
+        // Show the selected modal
+        if (modals[type]) {
+            modals[type].classList.add('active');
+        }
     }
     
-    // Helper function to show feedback
-    function showFeedback(message, type) {
-        formFeedback.textContent = message;
-        formFeedback.className = 'form-feedback';
-        if (type) {
-            formFeedback.classList.add(type);
-        }
+    // Close modal function
+    function closeModal() {
+        modalOverlay.classList.remove('active');
+        
+        // Hide all modals
+        Object.values(modals).forEach(modal => {
+            modal.classList.remove('active');
+        });
     }
 
     // Add copy functionality for contact information
     const copyButtons = document.querySelectorAll('.copy-btn');
     
     copyButtons.forEach(button => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (e) => {
+            // Prevent triggering the modal
+            e.stopPropagation();
+            
             // Get the ID of the element to copy from data attribute
             const targetId = button.getAttribute('data-copy');
             const textToCopy = document.getElementById(targetId).textContent;
@@ -193,12 +183,18 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.removeChild(textarea);
             
             // Visual feedback that the text was copied
-            button.innerHTML = '<i class="fas fa-check"></i>';
+            const originalButtonText = button.innerHTML;
+            const buttonSpan = button.querySelector('span');
+            if (buttonSpan) {
+                buttonSpan.textContent = 'Copied!';
+            }
             button.classList.add('copied');
             
             // Reset after 2 seconds
             setTimeout(() => {
-                button.innerHTML = '<i class="fas fa-copy"></i>';
+                if (buttonSpan) {
+                    buttonSpan.textContent = 'Copy';
+                }
                 button.classList.remove('copied');
             }, 2000);
         });

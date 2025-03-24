@@ -617,6 +617,27 @@ header.scrolled {
     box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
 }
 
+.form-feedback {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.form-feedback.success {
+    background: rgba(39, 174, 96, 0.2);
+    color: #2ecc71;
+    border: 1px solid #27ae60;
+}
+
+.form-feedback.error {
+    background: rgba(231, 76, 60, 0.2);
+    color: #e74c3c;
+    border: 1px solid #c0392b;
+}
+
 /* Add smooth scroll behavior */
 html {
     scroll-behavior: smooth;

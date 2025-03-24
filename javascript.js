@@ -93,4 +93,78 @@ document.addEventListener('DOMContentLoaded', () => {
     projects.forEach(project => {
         observer.observe(project);
     });
+
+    // Contact Form Handling
+    const contactForm = document.getElementById('contactForm');
+    const formFeedback = document.getElementById('formFeedback');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Clear previous feedback
+            formFeedback.textContent = '';
+            formFeedback.className = 'form-feedback';
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const formDataObj = {};
+            formData.forEach((value, key) => {
+                formDataObj[key] = value;
+            });
+            
+            // Simple validation
+            if (!formDataObj.name || !formDataObj.email || !formDataObj.message) {
+                showFeedback('Please fill in all fields.', 'error');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formDataObj.email)) {
+                showFeedback('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            try {
+                // Show loading message
+                showFeedback('Sending message...', '');
+                
+                // Send form data to server
+                const response = await fetch('/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formDataObj)
+                });
+                
+                // Parse the JSON response
+                const data = await response.json();
+                
+                // Handle response
+                if (response.ok) {
+                    showFeedback(data.message || 'Thank you for your message! I will get back to you soon.', 'success');
+                    contactForm.reset();
+                } else {
+                    // Use the detailed error message if available
+                    const errorMessage = data.message || 'Something went wrong. Please try again later.';
+                    const detailedError = data.details ? `\n\nDetails: ${data.details}` : '';
+                    showFeedback(errorMessage + detailedError, 'error');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showFeedback('Network error. Please check your connection and try again.', 'error');
+            }
+        });
+    }
+    
+    // Helper function to show feedback
+    function showFeedback(message, type) {
+        formFeedback.textContent = message;
+        formFeedback.className = 'form-feedback';
+        if (type) {
+            formFeedback.classList.add(type);
+        }
+    }
 });

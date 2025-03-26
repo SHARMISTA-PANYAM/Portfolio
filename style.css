@@ -228,21 +228,8 @@ header.scrolled {
     margin-top: 2rem;
 }
 
-.profile-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 2rem;
-}
-
-.profile-svg {
-    width: 100%;
-    max-width: 300px;
-}
-
 .about-text {
-    flex: 2;
+    flex: 4;
 }
 
 .about-text .bio {
@@ -262,7 +249,7 @@ header.scrolled {
 .skill-card {
     background: #151515;
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: 1.0rem;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -270,7 +257,6 @@ header.scrolled {
 .skill-logo {
     width: 48px;
     height: 48px;
-    margin-bottom: 0.8rem;
     transition: transform 0.3s ease;
 }
 
@@ -284,38 +270,6 @@ header.scrolled {
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--text-color);
-}
-
-@media (max-width: 768px) {
-    .skills-container {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 1rem;
-    }
-
-    .skill-card {
-        padding: 1rem;
-    }
-
-    .skill-logo {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    .skills-container {
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-        gap: 0.8rem;
-    }
-
-    .skill-logo {
-        width: 36px;
-        height: 36px;
-    }
-
-    .skill-card span {
-        font-size: 0.8rem;
-    }
 }
 
 /* Projects Section */
@@ -455,7 +409,7 @@ header.scrolled {
 
 .experience-tile {
     position: relative;
-    width: 45%;
+    width:60%;
     margin-bottom: 60px;
     z-index: 2;
 }
@@ -515,13 +469,6 @@ header.scrolled {
     color: var(--accent-color);
     margin: 0;
     font-size: 1.4rem;
-}
-
-.experience-content h4 {
-    margin: 5px 0;
-    color: var(--text-color);
-    font-size: 1.1rem;
-    font-weight: 500;
 }
 
 .timeline-date {
@@ -909,18 +856,147 @@ html {
     background: rgba(255, 71, 87, 0.8);
 }
 
-.social-icons {
-    margin-top: 5px;
+.projects-section {
+    text-align: center;
+    margin-top: 20px;
 }
 
-.social-icons a {
-    color: var(--text-color);
-    margin: 0 10px;
-    font-size: 20px;
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
+.github-link {
+    font-size: 1.8rem;
+    margin: 0;
     color: var(--accent-color);
+    margin-top: 15px;
+}
+
+
+.github-icon:hover {
+    transform: scale(1.1);
+}
+
+.icon-container {
+    display: inline-block;
+    text-align: center;
+    margin: 20px;
+    transition: transform 0.3s;
+}
+
+.icon-link {
+    text-decoration: none;
+    color: #ff4757;
+}
+
+.icon {
+    background-color: #2c2c2c;
+    border-radius: 12px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: transform 0.3s;
+}
+
+/* Text styling */
+.icon-text {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ff4757;
+}
+
+/* Hover effect */
+.icon-container:hover {
+    transform: scale(1.1);
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.contact-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2c2c2c;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.contact-button i {
+    margin-right: 8px;
+}
+
+.contact-button:hover {
+    background-color: #ff4757;
+}
+
+.work-experience-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.tile-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.experience-tile {
+    background-color: #2c2c2c;
+    border-radius: 12px;
+    padding: 1px;
+    color: #ffffff;
+    transition: transform 0.1s, box-shadow 0.2s;
+    position: relative;
+}
+
+.experience-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ff4757, 0 0 10px #ff4757, 0 0 10px #ff4757;
+}
+
+.read-more-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #ff4757;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
+}
+
+.read-more-button:hover {
+    background-color: #e84118;
+    transform: scale(1.05);
+}
+
+.learn-more-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #ff4757;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
+}
+
+.learn-more-button:hover {
+    background-color: #e84118;
+    transform: scale(1.05);
 }
 

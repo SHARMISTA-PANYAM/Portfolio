@@ -6,7 +6,7 @@
     <title>Sharmista Panyam - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="javascript.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -39,18 +39,6 @@
             <div class="underline"></div>
         </div>
         <div class="about-content">
-            <div class="profile-image">
-                <!-- Profile illustration SVG -->
-                <svg viewBox="25 0 200 200" xmlns="http://www.w3.org/2000/svg" class="profile-svg">
-                    <path fill="url(#gradient)" d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"/>
-                    <defs>
-                        <linearGradient id="gradient" gradientTransform="rotate(45)">
-                            <stop offset="0%" stop-color="#4e85f6" />
-                            <stop offset="100%" stop-color="#ff4757" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-            </div>
             <div class="about-text">
                 <p class="bio">
                     Fully committed to the philosophy of life-long learning, I'm a full stack developer with a deep passion for JavaScript, React, and all things web development. The unique combination of creativity, logic, technology, and never running out of new things to discover drives my excitement and passion for web development. When I'm not at my computer, I like to spend my time reading, keeping fit, and playing guitar.
@@ -110,16 +98,17 @@
         <div class="projects-grid">
             <article class="project-item">
                 <div class="project-image">
-                    <img src="https://via.placeholder.com/800x500/151515/ff4757" alt="Lifeinvader Social Media App">
+                    <img src="assets/projectimages/Gen AI Trends.png" alt="Lifeinvader Social Media App">
                 </div>
                 <div class="project-content">
-                    <h3>Lifeinvader</h3>
-                    <h4>Social Media App</h4>
+                    <h3>Generative AI Search Trends</h3>
+                    <h4>Analytics Dashboard</h4>
                     <p>Full stack social media application built with React, Node.js, Express.js, MongoDB, Socket.io and AWS S3.</p>
                     <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">MongoDB</span>
+                        <span class="tag">Tableau</span>
+                        <span class="tag">Data Visualization</span>
+                    </div>
+                    <a href="https://public.tableau.com/views/GenerativeAISearchTrends_17092620134140/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="learn-more-button" target="_blank">Learn More</a>
                 </div>
             </article>
 
@@ -135,6 +124,8 @@
                         <span class="tag">Power BI</span>
                         <span class="tag">Healthcare</span>
                         <span class="tag">Data Viz</span>
+                    </div>
+                    <a href="project-2-details.html" class="learn-more-button">Learn More</a>
                 </div>
             </article>
 
@@ -151,7 +142,21 @@
                         <span class="tag">ML</span>
                         <span class="tag">Healthcare</span>
                     </div>
+                    <a href="project-3-details.html" class="learn-more-button">Learn More</a>
+                </div>
             </article>
+        </div>
+
+        <div class="github-link">
+            <p>Checkout more on my GitHub profile:</p>
+            <div class="icon-container">
+                <a href="https://github.com/sharmista-panyam" target="_blank" rel="noopener noreferrer" class="icon-link">
+                    <div class="icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <p class="icon-text">GitHub</p>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -163,52 +168,41 @@
         </div>
         <div class="experience-container">
             <div class="timeline-line"></div>
-            
-            <div class="experience-tile left">
-                <div class="timeline-marker">
-                    <div class="timeline-number">1</div>
-                </div>
-                <div class="experience-content">
-                    <h3>Data Engineer</h3>
-                    <h4>Macy's</h4>
-                    <span class="timeline-date">2023 - Present</span>
-                    <p>Building and maintaining data pipelines, implementing ETL processes, and developing analytics solutions.</p>
-                </div>
-            </div>
-            
             <div class="experience-tile right">
                 <div class="timeline-marker">
-                    <div class="timeline-number">2</div>
+                    <div class="timeline-number">1</div>
                 </div>
                 <div class="experience-content">
                     <h3>AI Intern</h3>
                     <h4>D3V Technologies</h4>
                     <span class="timeline-date">2022 - 2023</span>
                     <p>Developed machine learning models and implemented AI solutions for client projects.</p>
+                    <a href="work-experience-1.html" class="read-more-button">Read More</a>
                 </div>
             </div>
             
             <div class="experience-tile left">
                 <div class="timeline-marker">
-                    <div class="timeline-number">3</div>
+                    <div class="timeline-number">2</div>
                 </div>
                 <div class="experience-content">
-                    <h3>Business Analyst</h3>
-                    <h4>Doublene</h4>
-                    <span class="timeline-date">2021 - 2022</span>
+                    <h3>Business Intelligence Engineer</h3>
+                    <h4>E2open</h4>
+                    <span class="timeline-date">Jun 2022 - Dec 2022</span>
                     <p>Analyzed business requirements and translated them into technical specifications.</p>
+                    <a href="work-experience-2.html" class="read-more-button">Read More</a>
                 </div>
             </div>
             
             <div class="experience-tile right">
                 <div class="timeline-marker">
-                    <div class="timeline-number">4</div>
+                    <div class="timeline-number">3</div>
                 </div>
                 <div class="experience-content">
-                    <h3>Full Stack Developer</h3>
-                    <h4>Techecy</h4>
-                    <span class="timeline-date">2020 - 2021</span>
-                    <p>Worked on developing web applications using modern frameworks and technologies.</p>
+                    <h3>Programmer Analyst</h3>
+                    <h4>Cognizant</h4>
+                    <span class="timeline-date">Sep 2020 - Jun 2022</span>
+                    <a href="work-experience-3.html" class="read-more-button">Read More</a>
                 </div>
             </div>
         </div>
@@ -225,6 +219,15 @@
             
             <div class="contact-info-container">
                 <div class="contact-info-row">
+                    <div class="contact-info-item" onclick="window.open('https://drive.google.com/file/d/1pXeko_DIH2VNrDhwfUdnuzRlvxBAqm_p/view?usp=drive_link', '_blank')">
+                        <div class="contact-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Resume</h3>
+                        </div>
+                    </div>
+                    
                     <div class="contact-info-item" data-modal="phone">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
@@ -251,6 +254,8 @@
                             <h3>LinkedIn</h3>
                         </div>
                     </div>
+
+                    
                 </div>
             </div>
         </div>
